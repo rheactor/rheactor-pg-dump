@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "types": ["node"],
+    "paths": {
+      "#/*": ["./src/*.ts"],
+      "#queries/*": ["./queries/*.ts"],
+      "#tests/*": ["./tests/*.ts"]
+    }
+  },
+
+  "include": [
+    ".env.d.ts",
+    "src/**/*.ts",
+    "tests/**/*.ts",
+    "oxfmt.config.ts",
+    "oxlint.config.ts",
+    "vitest.config.ts"
+  ],
+  "exclude": ["dist", "node_modules"]
+}

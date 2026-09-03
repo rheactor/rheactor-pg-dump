@@ -1,0 +1,48 @@
+{
+  "name": "@rheactor/rheactor-pg-dump",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rheactor PG Dump.",
+  "files": [
+    "dist",
+    "queries"
+  ],
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*.ts",
+    "#queries/*": "./queries/*.ts",
+    "#tests/*": "./tests/*.ts"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "bun run lint && bun run test && tsdown",
+    "lint": "bun run typecheck && bun run oxlint && bun run oxfmt",
+    "lint:fix": "bun run typecheck && bun run oxlint:fix && bun run oxfmt:fix",
+    "oxfmt": "oxfmt --check ./src ./tests",
+    "oxfmt:fix": "oxfmt --write ./src ./tests",
+    "oxlint": "oxlint ./src ./tests",
+    "oxlint:fix": "oxlint --fix ./src ./tests",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@rheactor/rheactor-core": "github:rheactor/rheactor-core",
+    "@rheactor/rheactor-pg-connector": "github:rheactor/rheactor-pg-connector"
+  },
+  "devDependencies": {
+    "@rheactor/rheactor-oxc-config": "github:@rheactor/rheactor-oxc-config",
+    "@types/node": "^26.6.1",
+    "nano-spawn": "^2.1.0",
+    "oxfmt": "^0.68.0",
+    "oxlint": "^1.83.0",
+    "tsdown": "^0.23.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  }
+}

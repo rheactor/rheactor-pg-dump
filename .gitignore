@@ -1,0 +1,4 @@
+AGENTS.md
+
+!queries/*.sql
+!tests/fixtures/queries/*.sql
